@@ -176,10 +176,11 @@
     }
 
     img {
-        height: 30vh;
+        height: 90%;
         margin: auto;
-        margin-top: 25px;
+        align-items: center;
         width: 70%;
+        justify-content: center;
     }
 
     .container ul {

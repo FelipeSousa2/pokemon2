@@ -166,6 +166,7 @@
     }
 
     .img {
+        display: flex;
         border-radius: 5px 5px;
         border: 1px solid white;
         margin: auto;
@@ -176,7 +177,7 @@
 
     img {
         height: 30vh;
-       
+        margin: auto;
         margin-top: 25px;
         width: 70%;
     }

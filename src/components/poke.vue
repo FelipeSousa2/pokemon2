@@ -1,36 +1,33 @@
 <template>
     <header>
         <h1>Catálogo pokemons</h1>
-        
+
     </header>
     <div class="container">
         <div class="bloco-1">
-          
+
             <ul>
-                
-                <li v-for="item in pokemons" 
-                :key="item.name"
-                @click="getUnique(item.url)" class="list2" >
+
+                <li v-for="item in pokemons" :key="item.name" @click="getUnique(item.url)" class="list2">
                     {{item.name}}
                 </li>
-                
-            </ul>           
+
+            </ul>
         </div>
 
-        
-       
+
+
         <div class="bloco-2">
-            
+
             <div class="img">
-               {{pokemon}}
-                <img
-               :src="imagem" :alt="Unique.name"
-                >
+                {{pokemon}}
+                <img :src="imagem" :alt="Unique.name">
             </div>
             <div>
-                 <label>{{Unique.name}}</label>
-                 <label>{{Unique.id}}</label>
-                 
+                <label>{{"Id: " + Unique.id}}</label>
+                <label>{{" - Nome: " + Unique.name}}</label>
+
+
             </div>
             <div id="list">
                 <div class="list-esq">
@@ -40,7 +37,7 @@
                         </li>
                     </ul>
                 </div>
-                 <div class="list-dir">
+                <div class="list-dir">
                     <ul>
                         <li v-for="item in stats" :key="item.stat.name">
                             {{item.stat.name + ":"}}
@@ -49,17 +46,18 @@
                     </ul>
                 </div>
             </div>
-            
-            
+
+
         </div>
-       
-        
-      
+
+
+
     </div>
-    
+
 </template>
 
 <script>
+import { onMounted } from '@vue/runtime-core'
     import {api} from '../services/services'
 
     export default {
@@ -69,11 +67,11 @@
         },
 
         data() {
-        return{
-        Unique: [],
-        imagem: "",
-        type: [],
-        stats: [],
+            return{
+                Unique: [],
+                imagem: "",
+                type: [],
+                stats: [],
         }
     },
     async created(){

@@ -10,7 +10,7 @@
                 
                 <li v-for="item in pokemons" 
                 :key="item.name"
-                @click="getUnique(item.url)" >
+                @click="getUnique(item.url)" class="list2" >
                     {{item.name}}
                 </li>
                 
@@ -32,20 +32,22 @@
                  <label>{{Unique.id}}</label>
                  
             </div>
-            <div>
-                <ul>
-                    <li v-for="item in type" :key="item.name">
-                        {{item.name}}
-                    </li>
-                </ul>
-            </div>
-             <div>
-                <ul>
-                    <li v-for="item in stats" :key="item.stat.name">
-                        {{item.stat.name}}
-                        {{item.base_stat}}
-                    </li>
-                </ul>
+            <div id="list">
+                <div class="list-esq">
+                    <ul>
+                        <li v-for="item in type" :key="item.name">
+                            {{item.name}}
+                        </li>
+                    </ul>
+                </div>
+                 <div class="list-dir">
+                    <ul>
+                        <li v-for="item in stats" :key="item.stat.name">
+                            {{item.stat.name + ":"}}
+                            {{item.base_stat}}
+                        </li>
+                    </ul>
+                </div>
             </div>
             
             
@@ -103,6 +105,8 @@
 
 
 <style>
+
+
     @import url('https://fonts.googleapis.com/css2? family=Rubik+Iso & display=swap');
 
     template {
@@ -190,15 +194,33 @@
         text-align: left;
     }
 
-    li {
+    .list2 {
         cursor: pointer;
 
     }
-    li:hover {
+    .list2:hover {
         background-color: white;
         color: black
     }
 
+    #list {
+        font-size: 1.2em;
+        font-family: 'Rubik Iso', cursiva;
+        font: bold;
+        opacity: 80%;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        color: black;
+        border: 1px solid black ;
+    }
+
+    .list-esq {
+        width: 50%;
+        border-right: 1px solid black;
+    }
+
+        
     
 
 </style>

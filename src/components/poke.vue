@@ -83,6 +83,8 @@
             const result = await api.get(url)
             const data = result.data
             this.Unique = data
+            this.type = []
+            this.stats = []
             data.types.forEach((e) => {
                 this.type.push(e.type)
             })

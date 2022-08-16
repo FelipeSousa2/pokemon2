@@ -169,7 +169,7 @@
         border-radius: 5px 5px;
         border: 1px solid white;
         margin: auto;
-        width: 90%;
+        
         margin-top: 40px;
         height: 45%;
     }
@@ -196,4 +196,7 @@
         background-color: white;
         color: black
     }
+
+    
+
 </style>
